@@ -5,15 +5,17 @@ const Blog = () => {
     return (<>
 
         <h5>Das ist die Blog Page</h5>
-        {blogData.map((postare, index) => {
-            return (
-                <div key={index}>
-                    <h5>{postare.title}</h5>
-                    
-
-                </div>
-            )
-        })}
+        <section className="blogArticles">
+            {blogData.map((postare, index) => {
+                return (
+                    <div className="blogArticle" key={index}>
+                        <img src={postare.img_url} alt={postare.title} />
+                        <h5>{postare.title}</h5>
+                        <button>Read More</button>
+                    </div>
+                )
+            })}
+        </section>
 
 
     </>);
