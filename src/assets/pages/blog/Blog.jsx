@@ -1,5 +1,6 @@
 import blogData from "../../data/main.js"
-const Blog = () => {
+import { Link } from "react-router-dom";
+const Blog = ({ id }) => {
 
     console.log(blogData);
     return (<>
@@ -11,7 +12,7 @@ const Blog = () => {
                     <div className="blogArticle" key={index}>
                         <img src={postare.img_url} alt={postare.title} />
                         <h5>{postare.title}</h5>
-                        <button>Read More</button>
+                        <Link to={`/blog/${postare.id}`}><button>Read More</button></Link>
                     </div>
                 )
             })}
